@@ -184,6 +184,7 @@ include 'sidebar.php';
                 <div class="row">
                     <div class="text-center" style="width:50%; margin:auto;">
                         <label for="" style="font-weight: 900;color: #012970;">Select Project</label>
+                        <br><br>
                         <select id="select_project_id"
                             style="width:100%;padding:10px;border-radius:5px;border:1px solid #ccc;font-size:16px;"
                             onchange="fetchProjectData(); fetchProjectData1(); toggleBillingMilestone();">
