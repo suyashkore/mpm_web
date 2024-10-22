@@ -1,0 +1,8 @@
+{
+    "require-dev": {
+        "laravel/pint": "^1.18"
+    },
+    "require": {
+        "phpoffice/phpspreadsheet": "^3.3"
+    }
+}
