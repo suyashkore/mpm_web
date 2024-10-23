@@ -699,7 +699,7 @@
                     <div class="row g-3">
                         <!-- Project Name -->
                         <div class="col-md-12">
-                            <label for="project_id" class="form-label">Select Project Name:</label>
+                            <label for="project_id" class="form-label">Select Project Name:<span style="color: red;">*</span></label>
                             <select id="project_id" name="project_id" required class="form-control">
                                 <option value="">Select Project</option>
                                 <?php foreach ($projects['projects'] as $project): ?>
@@ -711,12 +711,12 @@
                         </div>
                         <!-- Subject -->
                         <div class="col-md-12">
-                            <label for="subject" class="form-label">Subject</label>
+                            <label for="subject" class="form-label">Subject<span style="color: red;">*</span></label>
                             <input type="text" name="subject" id="subject" class="form-control" required>
                         </div>
                         <!-- Radio Button Section: From -->
                         <div class="col-md-12">
-                            <label class="form-label"><b>From</b></label><br>
+                            <label class="form-label"><b>From<span style="color: red;">*</span></b></label><br>
                             <div class="form-check form-check-inline" style="margin-right: 15px;">
                                 <input class="form-check-input" type="radio" name="poke_from" id="from_client" value="1"
                                     required>
@@ -730,7 +730,7 @@
                         </div>
                         <!-- Critical Level -->
                         <div class="col-md-12">
-                            <label for="criticality_level" class="form-label">Critical Level</label>
+                            <label for="criticality_level" class="form-label">Critical Level<span style="color: red;">*</span></label>
                             <select id="criticality_level" name="criticality_level" class="form-control" required>
                                 <option value="">Select Critical Level</option>
                                 <option value="1">Low</option>
@@ -762,7 +762,7 @@
 
                 <!-- Radio Button Section: From -->
                 <div class="col-md-12">
-                    <label class="form-label"><b>From</b></label><br>
+                    <label class="form-label"><b>From<span style="color: red;">*</span></b></label><br>
                     <div class="form-check form-check-inline" style="margin-right: 15px;">
                         <input class="form-check-input" type="radio" name="poke_from" id="from_client" value="1"
                             required onclick="updateToSelection('monarch')">
@@ -789,11 +789,11 @@
                         <label class="form-check-label" for="to_client">Monarch</label>
                     </div>
                 </div>
-
+<br>
                 <!-- Communication Medium and Criticality Level -->
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="communication_medium" class="form-label">Communication Medium</label>
+                        <label for="communication_medium" class="form-label">Communication Medium<span style="color: red;">*</span></label>
                         <select name="communication_medium" id="communication_medium" class="form-control" required>
                             <option value="">Select Medium</option>
                             <option value="1">Face to Face</option>
@@ -805,7 +805,7 @@
 
 
                     <div class="col-md-6">
-                        <label for="lavel" class="form-label">Criticality Level</label>
+                        <label for="lavel" class="form-label">Criticality Level<span style="color: red;">*</span></label>
                         <select id="lavel" name="lavel" class="form-control" required>
                             <option value="">Select Level</option>
                             <option value="1">1</option>
@@ -818,7 +818,7 @@
                 </div>
 
                 <div class="col-md-12">
-                    <label for="short_desc" class="form-label">Short Description</label>
+                    <label for="short_desc" class="form-label">Short Description<span style="color: red;">*</span></label>
                     <input type="text" name="short_desc" id="short_desc" class="form-control" required><br><br>
                 </div>
 
@@ -832,7 +832,7 @@
                 <div class="row">
                     <!-- Date Field -->
                     <div class="col-md-6">
-                        <label for="date" class="form-label">Date</label>
+                        <label for="date" class="form-label">Date<span style="color: red;">*</span></label>
                         <input type="date" name="date" id="date" class="form-control" required><br>
                     </div>
                     <!-- Date of Letter Field -->
@@ -843,12 +843,12 @@
                 </div>
 
                 <div class="col-md-12" id="pdf-upload-section">
-                    <label class="form-label">Upload PDF(s)</label>
+                    <label class="form-label">Upload PDF</label>
                     <div id="pdf-inputs">
                         <div class="pdf-input-group d-flex align-items-center mb-2">
                             <input type="file" id="pdf-files" class="form-control" accept=".pdf" multiple>
                         </div>
-                        <div id="selected-files-list"></div> <!-- Section to display selected files -->
+                        <div id="selected-files-list"></div> 
                         <div id="file-count" class="mt-2"><b>Total Selected Files: 0</b></div>
                     </div>
                 </div>
