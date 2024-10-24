@@ -733,9 +733,11 @@
                             <label for="criticality_level" class="form-label">Critical Level<span style="color: red;">*</span></label>
                             <select id="criticality_level" name="criticality_level" class="form-control" required>
                                 <option value="">Select Critical Level</option>
-                                <option value="1">Low</option>
-                                <option value="2">Medium</option>
-                                <option value="3">High</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                             </select>
                         </div>
                     </div>
@@ -794,15 +796,12 @@
                 <div class="row">
                     <div class="col-md-6">
                         <label for="communication_medium" class="form-label">Communication Medium<span style="color: red;">*</span></label>
-                        <select name="communication_medium" id="communication_medium" class="form-control" required>
+                        <select name="communication_medium" id="communication_medium" class="form-control" required onchange="toggleFields()">
                             <option value="">Select Medium</option>
                             <option value="1">Face to Face</option>
                             <option value="2">By Letter or Electronic Communication</option>
                         </select><br>
                     </div>
-
-
-
 
                     <div class="col-md-6">
                         <label for="lavel" class="form-label">Criticality Level<span style="color: red;">*</span></label>
@@ -817,26 +816,25 @@
                     </div>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12" id="shortDescSection">
                     <label for="short_desc" class="form-label">Short Description<span style="color: red;">*</span></label>
                     <input type="text" name="short_desc" id="short_desc" class="form-control" required><br><br>
                 </div>
 
-                <div class="col-md-12">
+                <div class="col-md-12" id="detailedDescSection">
                     <label for="detailed_desc" class="form-label">Detailed Description</label>
-                    <textarea name="detailed_desc" id="detailed_desc" class="form-control" rows="3"
-                        required></textarea><br><br>
+                    <textarea name="detailed_desc" id="detailed_desc" class="form-control" rows="3" required></textarea><br><br>
                 </div>
 
                 <!-- Horizontal Row: Date and Date of Letter -->
                 <div class="row">
                     <!-- Date Field -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" id="dateSection">
                         <label for="date" class="form-label">Date<span style="color: red;">*</span></label>
                         <input type="date" name="date" id="date" class="form-control" required><br>
                     </div>
                     <!-- Date of Letter Field -->
-                    <div class="col-md-6">
+                    <div class="col-md-6" id="dateOfLetterSection">
                         <label for="date_of_letter" class="form-label">Date of Letter</label>
                         <input type="date" name="date_of_letter" id="date_of_letter" class="form-control"><br>
                     </div>

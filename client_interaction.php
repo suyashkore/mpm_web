@@ -381,7 +381,6 @@ include 'sidebar.php';
             </div>
         </div>
 
-
         <!-- Modal for No Data Found -->
         <div class="modal fade" id="noDataModal" tabindex="-1" role="dialog" aria-labelledby="noDataModalLabel"
             aria-hidden="true">
@@ -427,6 +426,14 @@ include 'sidebar.php';
     function showModal(data) {
         // Fill the modal body with detailed description
         $('#modal-body').html("<p><strong>Details:</strong></p><p>" + data.detailed_desc.replace(/\n/g, '</p><p>') + "</p>"
+        )
+        // Show the modal
+        $('#detailsModal').modal('show');
+    }
+
+    function showModal1(data) {
+        // Fill the modal body with detailed description
+        $('#modal-body').html("<p><strong>Short Discussion:</strong></p><p>" + data.short_desc.replace(/\n/g, '</p><p>') + "</p>"
         )
         // Show the modal
         $('#detailsModal').modal('show');
@@ -671,11 +678,14 @@ include 'sidebar.php';
                 } else {
                     console.error('Error:', xhr.responseText);
                     document.getElementById('failMessage').innerText = xhr.responseText.trim();
+                    closeResponseModal();
+
                     $('#failModal').modal('show');
                 }
             } else {
                 console.error('Error:', xhr.responseText);
-                document.getElementById('failMessage').innerText = xhr.responseText.trim();
+                document.getElementById('failMessage').innerText = xhr.responseText.trim();                    closeResponseModal();
+
                 $('#failModal').modal('show');
             }
         };
@@ -898,4 +908,38 @@ include 'sidebar.php';
     }
 
 
+</script>
+<script>
+// Function to toggle fields based on Communication Medium
+function toggleFields() {
+    const communicationMedium = document.getElementById('communication_medium').value;
+
+    // Fields to toggle
+    const shortDescSection = document.getElementById('shortDescSection');
+    const detailedDescSection = document.getElementById('detailedDescSection');
+    const dateSection = document.getElementById('dateSection');
+    const dateOfLetterSection = document.getElementById('dateOfLetterSection');
+    const pdfUploadSection = document.getElementById('pdf-upload-section');
+
+    if (communicationMedium == '1') { // Face to Face
+        shortDescSection.style.display = 'block';
+        detailedDescSection.style.display = 'block';
+        dateSection.style.display = 'block';
+        dateOfLetterSection.style.display = 'none';
+        pdfUploadSection.style.display = 'none';
+    } else if (communicationMedium == '2') { // By Letter or Electronic Communication
+        shortDescSection.style.display = 'none';
+        detailedDescSection.style.display = 'none';
+        dateSection.style.display = 'block';
+        dateOfLetterSection.style.display = 'block';
+        pdfUploadSection.style.display = 'block';
+    } else {
+        // Hide all sections when no medium is selected
+        shortDescSection.style.display = 'none';
+        detailedDescSection.style.display = 'none';
+        dateSection.style.display = 'none';
+        dateOfLetterSection.style.display = 'none';
+        pdfUploadSection.style.display = 'none';
+    }
+}
 </script>
